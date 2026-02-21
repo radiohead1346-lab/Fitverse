@@ -30,7 +30,7 @@ const CategoryPage = () => {
     }
 
     setLoading(true);
-    fetch('http://localhost:8000/products/')
+    fetch(`${import.meta.env.VITE_API_URL}/products`)
       .then((response) => {
         if (!response.ok) throw new Error('Network response was not ok');
         return response.json();

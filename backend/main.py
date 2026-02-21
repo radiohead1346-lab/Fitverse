@@ -13,13 +13,13 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# CORS: Allow your React app (localhost:5173) to talk to this Python backend
+# Add this block to allow your future Vercel frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], 
+    allow_origins=["*"],  # Allows all origins
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
 )
 
 # Dependency: Get access to the database for each request

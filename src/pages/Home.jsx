@@ -10,7 +10,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/products/')
+    fetch(`${import.meta.env.VITE_API_URL}/products`)
       .then((response) => {
         // If the server throws an error (like 404 or 405), catch it immediately
         if (!response.ok) {

@@ -16,7 +16,7 @@ class Product(Base):
     description = Column(Text, nullable=True)
     price_label = Column(String, default="Check Price")
     image = Column(String)
-    link = Column(String)  # <--- THIS IS YOUR AMAZON URL
+    link = Column(String) 
     rating = Column(Float, default=0.0)
     features = Column(ARRAY(String)) 
     category_id = Column(Integer, ForeignKey("categories.id"))
