@@ -15,7 +15,7 @@ const ProductPage = () => {
     window.scrollTo(0, 0);
     setLoading(true);
 
-    fetch(`${import.meta.env.VITE_API_URL}/products`)
+    fetch(`${import.meta.env.VITE_API_URL}/products/${productId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Product not found');
